@@ -1,0 +1,8 @@
+<form action="/admin/" method="post">
+    {% csrf_token %}
+    {% for item in form %}
+    <p>{{item.label_tag}}{{item}}</p>
+    
+    {% endfor %}
+    <input type="submit" value="Submit">
+</form>

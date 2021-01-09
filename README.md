@@ -45,4 +45,4 @@ This is paystack's endpoint for payment, we've already submitted the amount by a
 So when working with this endpoint, you're probably using a form. So extract the data from the form and use as a post request <br>
 
 Now check the user Details and see that the current balance of the user has changed# ejeka_invest
-# ejeka_invest
+# EJEKA INVEST
