@@ -12,7 +12,7 @@ python manage.py runserver
 
 The server should be running now.
 
-Now we're going to test our api end points
+Now we're going to test our api endpoints
 
 # API Endpoints
 ## User Management with Djoser + Django Rest Framework
