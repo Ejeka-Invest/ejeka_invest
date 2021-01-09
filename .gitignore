@@ -1,5 +1,4 @@
 /payment/secrets.py
-mainapp/_secrets.py
 **/.vscode/
 /env
 /db.sqlite3

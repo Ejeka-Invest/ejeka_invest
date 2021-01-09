@@ -37,7 +37,7 @@ Now you can get all the details of the user you need
 The dashboard can be worked on later, you should be able to query the remaining data from the **Check User Details** Endpoint
 
 
-**Make pamyent (POST)** <br /> 
+**Make payment (POST)** <br /> 
 ```curl -X POST http://127.0.0.1:8000/api/payment/ -H 'Authorization:Token <token>' --data 'amount=50000'```
 
 This returns a url that looks like this: "https://checkout.paystack.comggg1g1g1g11g1g1" <br>
