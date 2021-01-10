@@ -110,3 +110,6 @@ class ReturnsOnInvestments(models.Model):
 
     def __str__(self):
         return str(self.agriculture)
+
+    class Meta:
+        verbose_name_plural = "Returns on Investments"
