@@ -6,6 +6,7 @@ from .views import UserPortfolioListCreateView, UserPortfolioDetailView
 from . import get_user
 from . import views
 
+"""
 urlpatterns = [
     path('all-profiles', UserPortfolioListCreateView.as_view(),
          name='all-profiles'),
@@ -14,3 +15,4 @@ urlpatterns = [
 
 ]
 
+"""

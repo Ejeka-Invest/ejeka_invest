@@ -71,7 +71,6 @@ def make_payment(request):
 
         url= deposit.make_payment(str(request.user.email), str(amount))
         #return HttpResponseRedirect()
-
         return Response(url)
 
 
@@ -107,13 +106,14 @@ def savepayment_view(request):
         if deposit.exists():
             deposit_save = DepositModel.objects.filter(user=user_detail[0])
             total=0
+
             for amount in deposit_save:
                 total +=int((str(amount)))
             print(total)
             user_detail.update(current_balance=total)
 
         else:
-            print('full')
+            user_detail.update(current_balance=new_deposit)
 
             
     return HttpResponseRedirect("/dashboard/")

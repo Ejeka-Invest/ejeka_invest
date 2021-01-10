@@ -40,7 +40,7 @@ The dashboard can be worked on later, you should be able to query the remaining 
 **Make payment (POST)** <br /> 
 ```curl -X POST http://127.0.0.1:8000/api/payment/ -H 'Authorization:Token <token>' --data 'amount=50000'```
 
-This returns a url that looks like this: "https://checkout.paystack.comggg1g1g1g11g1g1" <br>
+This returns a url that looks like this: "https://checkout.paystack.com/ggg1g1g1g11g1g1" <br>
 This is paystack's endpoint for payment, we've already submitted the amount by a post request<br>
 So when working with this endpoint, you're probably using a form. So extract the data from the form and use as a post request <br>
 
