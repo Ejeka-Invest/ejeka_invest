@@ -147,16 +147,43 @@ REST_FRAMEWORK = {
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
+
     'SERIALIZERS': {
         'user': 'accounts.serializers.UserPortfolioSerializer',
         'current_user': 'accounts.serializers.UserPortfolioSerializer',
     },
+
     'CREATE_SESSION_ON_LOGIN': True,
+
+    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': 'activate/{uid}/{token}/',
+
+    'SEND_ACTIVATION_EMAIL': True,
+    'SEND_CONFIRMATION_EMAIL': True,
+
+    'EMAIL': {
+        'activation': 'accounts.emails.email.ActivationEmail',
+        "confirmation": 'accounts.emails.email.ConfirmationEmail',
+        "password_reset": "djoser.email.PasswordResetEmail",
+        "password_changed_confirmation": "djoser.email.PasswordChangedConfirmationEmail",
+        "username_changed_confirmation": "djoser.email.UsernameChangedConfirmationEmail",
+        "username_reset": "djoser.email.UsernameResetEmail",
+    }
 }
+
+DOMAIN = ('127.0.0.1:8000')
+SITE_NAME = ('Ejeka Invest')
 
 
 AUTH_USER_MODEL = 'accounts.UserPortfolio'
 
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'mitchelinajuo@gmail.com'
+EMAIL_HOST_PASSWORD = 'ilovekettle'
+EMAIL_PORT = 587
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 

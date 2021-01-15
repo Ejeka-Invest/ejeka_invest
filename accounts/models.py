@@ -51,7 +51,7 @@ class UserPortfolio(AbstractBaseUser):
     last_name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    unique_id = models.UUIDField(default=uuid.uuid4)
+    uid = models.UUIDField(default=uuid.uuid4)
     date_joined = models.DateTimeField(auto_now=True)
     total_amount_invested = models.IntegerField(default="0")
     roi = models.IntegerField(default="5")

@@ -2,13 +2,13 @@ import requests
 
 class UserAPI:
 
-    def __init__(self):
+    def __init__(self): 
         self.url = "http://127.0.0.1:8000/auth/"
         self.account_url = "http://127.0.0.1:8000/api/accounts/"
         
         #self.username = "mitchelinaju"
         self.password = "adminmaster"
-        self.email = "nathaninaju1@gmail.com"
+        self.email = "mitchelinajuo@gmail.com"
         self.first_name = 'mitchel'
         self.last_name = 'inaju'
 
@@ -30,9 +30,10 @@ class UserAPI:
         create_user_url = "users/"
         url = self.url+create_user_url
         #print(url)
+        
         response = requests.post(url, data=self.data)
         return print(response.json(), response.status_code)
-    
+   
     def login(self):
         login_url = "token/login/"
         url = self.url+login_url
@@ -63,10 +64,11 @@ class UserAPI:
 
         response = requests.post(url, headers=headers)
         return print(response.json(), response.status_code)
-2
+
 test= UserAPI()
+print(test.create_user())
 #print(test.login())
-test.user_details("288aef7065da19d44715069a26bf7f7bda32bf1b")
+#test.user_details("288aef7065da19d44715069a26bf7f7bda32bf1b")
 
 
 
@@ -113,7 +115,7 @@ class MainAPI:
         return print(response.json())
 
 
-test_main=MainAPI()
-test_main.dashboard("288aef7065da19d44715069a26bf7f7bda32bf1b", action="amount")
+#test_main=MainAPI()
+#test_main.dashboard("288aef7065da19d44715069a26bf7f7bda32bf1b", action="amount")
 #test_main.payment("288aef7065da19d44715069a26bf7f7bda32bf1b")
 
