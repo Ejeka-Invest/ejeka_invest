@@ -1,6 +1,6 @@
 /payment/secrets.py
 **/.vscode/
-/env
+/venv
 /db.sqlite3
 *.pyc
 *__pycache__
