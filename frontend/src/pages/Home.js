@@ -7,6 +7,39 @@ function Home() {
         <div className="home">
             <Navbar />
             <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
+            <h1>I am the Home Component</h1>
         </div>
     )
 }

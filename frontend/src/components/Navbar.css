@@ -1,6 +1,11 @@
 .navbar {
     background-color: white;
-    border: 2px red solid;
+}
+.navbar--sticky {
+    position: sticky;
+    top: 0;
+    padding: 10px 0;
+    transition: .5s;
 }
 .navbar__wrapper {
     display: flex;
@@ -14,7 +19,11 @@
     flex: 0.4;
 }
 .navbar__logo a {
-    font-size: 25px;
+    text-decoration: none;
+    color: var(--ejeka_blue);
+}
+.navbar__logo h1 {
+    display: inline-block;
 }
 .navbar__links {
     flex: 0.6;
@@ -43,7 +52,7 @@
 .navbar__link--login {
     font-weight: bold;
     list-style: none;
-    padding: 15px 30px;
+    padding: 13px 30px;
     border-radius: 8px;
     border: 1px var(--ejeka_blue) solid;
     transition: .3s ease-in-out;
@@ -51,7 +60,7 @@
 .navbar__link--signup {
     font-weight: bold;
     list-style: none;
-    padding: 15px 30px;
+    padding: 13px 30px;
     border-radius: 8px;
     border: 1px var(--ejeka_blue) solid;
     color: white;
