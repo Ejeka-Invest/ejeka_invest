@@ -14,4 +14,4 @@ class DepositSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = DepositModel
-        fields = '__all__'
+        fields = ['amount', 'date_invested', 'maturity_date',]
