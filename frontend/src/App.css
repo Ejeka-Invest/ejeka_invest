@@ -1,0 +1,10 @@
+:root {
+    --ejeka_blue: #004AAD;
+    --light_blue: rgb(211, 234, 241);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+}
