@@ -44,26 +44,6 @@ class UserPortfolioDetailView(RetrieveUpdateDestroyAPIView):
     permission_Calsses = [IsOwnerProfileOrReadOnly, IsAuthenticated]
 
 
-class ActivateUserByGet(APIView):
-
-    def get(self, request, uid, token, format=None):
-        payload = {'uid': uid, 'token': token}
-        headers={
-            'Token':token
-        }
-
-        protocol = 'https://' if request.is_secure() else 'http://'
-        web_url = protocol + request.get_host()
-        post_url = web_url + "/auth/users/activate/"
-
-        response = requests.get(post_url, data=payload, headers=headers)
-        print(uid, token)
-        if response.status_code == 204:
-            return Response({'detail': 'all good'})
-        else:
-            return Response(response.json(),response.status_code)
-
-
 class ActivateUser(APIView):
 
     def get(self, request, uid, token, format=None):

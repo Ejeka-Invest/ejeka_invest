@@ -18,7 +18,6 @@ urlpatterns = [
 """
 
 urlpatterns =[
-    #path('activate/<str:uid>/<str:token>/', views.ActivateUserByGet.as_view()),
     path('activate/<str:uid>/<str:token>/', views.ActivateUser.as_view()),
 
 ]

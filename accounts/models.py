@@ -98,11 +98,15 @@ class DepositModel(models.Model):
     user = models.ForeignKey('UserPortfolio', on_delete=models.CASCADE)
     amount = models.IntegerField(default="0")
     date_in = models.DateTimeField(auto_now_add=True)
-    reference_number = models.CharField(max_length=50, null=True)
+    reference_number = models.CharField(max_length=50, null=False)
+    date_invested = models.DateField(null=False)
+    maturity_date = models.DateField(null=False)
     
 
     def __str__(self):
         return str(self.amount)
+
+    
 
 
 class ReturnsOnInvestments(models.Model):

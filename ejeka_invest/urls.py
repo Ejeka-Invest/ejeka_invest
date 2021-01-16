@@ -24,6 +24,7 @@ urlpatterns = [
     path('auth/', include('djoser.urls.authtoken')),
     #path('api/accounts/', include('accounts.urls')),
     path('main/', include('mainapp.urls')),
+    path('', include('mainapp.urls')),
     path('', include('accounts.urls')),
     # react paths
      path("", TemplateView.as_view(template_name="index.html")),
