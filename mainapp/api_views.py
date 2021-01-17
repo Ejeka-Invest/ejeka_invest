@@ -1,3 +1,5 @@
+from rest_framework import generics
+from rest_framework.generics import ListCreateAPIView, ListAPIView, RetrieveUpdateDestroyAPIView
 from django.core.serializers import serialize
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -10,9 +12,11 @@ from accounts.serializers import UserPortfolioSerializer, DepositSerializer
 from accounts.models import UserPortfolio, DepositModel
 from .paystack import Base
 from django.http import HttpResponse, HttpResponseRedirect
-import urllib.parse as urlparse
 from urllib.parse import parse_qs
+from accounts.maturity_date import add_months
 
+import urllib.parse as urlparse
+import datetime
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
@@ -77,7 +81,12 @@ def make_payment(request):
 @api_view()
 @permission_classes([AllowAny])
 def savepayment_view(request):
-    
+
+    date_today = datetime.date.today()
+    mature_in_6_months = (add_months(date_today, 6))
+    print(date_today, type(date_today),'today')
+    print(mature_in_6_months, type(mature_in_6_months),'months')
+
     url = request.get_raw_uri()
     print(url)
     parsed = urlparse.urlparse(url)
@@ -101,7 +110,11 @@ def savepayment_view(request):
         deposit_serializer = DepositSerializer(deposit, many=True)
 
         sum_amount = deposit_serializer.data
-        deposit_new_amount = DepositModel.objects.create(user=user_detail[0], amount=new_deposit, reference_number=str(reference[0]))
+        deposit_new_amount = DepositModel.objects.create(user=user_detail[0], 
+                                                amount=new_deposit, 
+                                                reference_number=str(reference[0]), 
+                                                date_invested=date_today, 
+                                                         maturity_date=mature_in_6_months)
 
         if deposit.exists():
             deposit_save = DepositModel.objects.filter(user=user_detail[0])
@@ -118,6 +131,34 @@ def savepayment_view(request):
             
     return HttpResponseRedirect("/dashboard/")
 
+"""
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def InvestmentDetails(request):
+    if request.method == 'GET':
+        user = UserPortfolio.objects.filter(email=request.user)
+        serializer = DepositSerializer(user, many=True)
+        print(serializer.data)
+
+        return Response('serializer.data')
+
+"""
+
+
+class InvestmentDetails(generics.ListCreateAPIView):
+    queryset = DepositModel.objects.all()
+    serializer_class = DepositSerializer
+    permission_Calsses = [IsAuthenticated]
+
+
+"""
+class InvestmentDetails(RetrieveUpdateDestroyAPIView):
+
+    queryset = DepositModel.objects.all()
+    serializer_class = DepositSerializer
+    permission_Calsses = [IsAuthenticated]
+
+"""
 
 """
 work from home remote

@@ -1,0 +1,20 @@
+
+{% block subject %}Account activation on {{ site_name }}{% endblock %}
+
+{% block html_body %}
+<p><b>Welcome to Ejeka Invest</b></p>
+
+<p>You're receiving this email because you need to finish activation process on {{ site_name }}.</p>
+
+<p>
+Please go to the following page to activate account:</p>
+<p>{{ protocol }}://{{ domain }}/{{ url|safe }}</p>
+
+<p> Thanks for patnering with Ejeka Invest!</p>
+
+<p> The {{ site_name }} team </p>
+
+<p>Thank You </p>
+</p>
+{% endblock %}
+

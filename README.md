@@ -45,4 +45,28 @@ This is paystack's endpoint for payment, we've already submitted the amount by a
 So when working with this endpoint, you're probably using a form. So extract the data from the form and use as a post request <br>
 
 Now check the user Details and see that the current balance of the user has changed# ejeka_invest
+
+
+
+**Get Investment Details(GET)** <br />
+```curl -LX GET http://127.0.0.1:8000/investmentdetails/ -H 'Authorization:Token <token>'  ``` <br>
+This returns something like this
+
+``` [{'amount': 100000, 'date_invested': '2021-01-16', 'maturity_date': None}, {'amount': 100000, 'date_invested': '2021-01-16', 'maturity_date': None}, {'amount': 100000, 'date_invested': '2021-01-16', 'maturity_date': '2021-01-16'}] ```
+
+This represents the different amounts, date of investment and maturity dates
+
+You just need to loop over this to get the result you want
+
+This format is a dictionary inside a list, so to get the data, use this
+
+```
+for i in investment_details[0]:
+    print(i)
+
+```
+my point, you want the first element in the list by using something like ```investment_details[0]```
+
+
+
 # EJEKA INVEST

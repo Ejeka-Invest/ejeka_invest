@@ -12,6 +12,7 @@ urlpatterns = [
     path('api/dashboard/', api_views.dashboard_view),
     path('api/payment/', api_views.make_payment),
     path('savepayment/', api_views.savepayment_view),
-    path('dashboard/', api_views.dashboard)
+    path('dashboard/', api_views.dashboard),
+    path('investmentdetails/', api_views.InvestmentDetails.as_view()),
 
 ]

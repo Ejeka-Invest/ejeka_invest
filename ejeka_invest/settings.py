@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import datetime
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,6 +46,7 @@ INSTALLED_APPS = [
     'djoser',
     'rest_framework',
     'rest_framework.authtoken',
+    'environ',
 ]
 
 MIDDLEWARE = [
@@ -147,16 +149,44 @@ REST_FRAMEWORK = {
 
 DJOSER = {
     'LOGIN_FIELD': 'email',
+
     'SERIALIZERS': {
         'user': 'accounts.serializers.UserPortfolioSerializer',
         'current_user': 'accounts.serializers.UserPortfolioSerializer',
     },
+
     'CREATE_SESSION_ON_LOGIN': True,
+
+    'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
+    'ACTIVATION_URL': 'activate/{uid}/{token}/',
+
+    'SEND_ACTIVATION_EMAIL': False,
+    'SEND_CONFIRMATION_EMAIL': False,
+
+    'EMAIL': {
+        'activation': 'accounts.emails.email.ActivationEmail',
+        "confirmation": 'accounts.emails.email.ConfirmationEmail',
+        "password_reset": "djoser.email.PasswordResetEmail",
+        "password_changed_confirmation": "djoser.email.PasswordChangedConfirmationEmail",
+        "username_changed_confirmation": "djoser.email.UsernameChangedConfirmationEmail",
+        "username_reset": "djoser.email.UsernameResetEmail",
+    }
 }
+
+DOMAIN = ('127.0.0.1:8000')
+SITE_NAME = ('Ejeka Invest')
 
 
 AUTH_USER_MODEL = 'accounts.UserPortfolio'
 
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+SENDGRID_API_KEY = config('SENDGRID_API_KEY')
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey'  # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
