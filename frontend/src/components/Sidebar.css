@@ -1,5 +1,5 @@
 .sidebar {
-    background-color: var(--ejeka_blue);
+    background: var(--algo_blue);
     width: 100%;
     height: calc(100vh - 80px);
     position: fixed;
@@ -41,7 +41,7 @@
 }
 .sidebar__link--login {
     background-color: white;
-    color: var(--ejeka_blue) !important;
+    color: var(--algo_blue_plain) !important;
     border: 1px white solid;
     margin: 10px auto;
     width: 90%;

@@ -2,6 +2,7 @@
     --ejeka_blue: #004AAD;
     --light_blue: rgb(211, 234, 241);
     --algo_blue_plain: #02203c;
+    --algo_blue: linear-gradient(-90deg,#02203c,#001528);
 }
 * {
     padding: 0;
