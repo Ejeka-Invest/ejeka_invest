@@ -145,32 +145,10 @@ def InvestmentDetails(request):
 """
 
 
+@permission_classes([IsAuthenticated])
 class InvestmentDetails(generics.ListCreateAPIView):
     queryset = DepositModel.objects.all()
     serializer_class = DepositSerializer
     permission_Calsses = [IsAuthenticated]
 
 
-"""
-class InvestmentDetails(RetrieveUpdateDestroyAPIView):
-
-    queryset = DepositModel.objects.all()
-    serializer_class = DepositSerializer
-    permission_Calsses = [IsAuthenticated]
-
-"""
-
-"""
-work from home remote
-forex
-the product that prevents injuries
-foreign copyrights initative
-canada 3-6 months
-professional web designer
-create a paypal account
-"""
-
-"""
-Have a goal and work towards it
-
-"""

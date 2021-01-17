@@ -65,10 +65,10 @@ class UserAPI:
         response = requests.post(url, headers=headers)
         return print(response.json(), response.status_code)
 
-#test= UserAPI()
-#print(test.create_user())
+test= UserAPI()
+print(test.create_user())
 #print(test.login())
-#test.user_details("288aef7065da19d44715069a26bf7f7bda32bf1b")
+#test.user_details("20f8fd50490a6a8771720b42fd829cac6c47a6e0")
 
 
 
@@ -129,5 +129,6 @@ class MainAPI:
 
 test_main=MainAPI()
 #test_main.dashboard("288aef7065da19d44715069a26bf7f7bda32bf1b", action="amount")
-#test_main.payment("fe72c7b63155221bd317b124480948b0208d24a0")
-test_main.get_investment_details("fe72c7b63155221bd317b124480948b0208d24a0")
+#test_main.payment("20f8fd50490a6a8771720b42fd829cac6c47a6e0")
+"""work on when it returns an empty list"""
+test_main.get_investment_details("20f8fd50490a6a8771720b42fd829cac6c47a6e0")
