@@ -4,16 +4,25 @@
 .navbar--sticky {
     position: sticky;
     top: 0;
-    padding: 10px 0;
-    transition: .5s;
+    animation-name: slide-in;
+    animation-duration: .6s;
+}
+@keyframes slide-in {
+    0% {
+        transform: TranslateY(-100%);
+    }
+    100% {
+        transform: TransLateY(0%);
+    }
 }
 .navbar__wrapper {
+    height: 80px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1250px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 12px 20px;
 }
 .navbar__logo {
     flex: 0.4;
@@ -35,7 +44,7 @@
     display: block;
     color: var(--ejeka_blue);
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
     letter-spacing: 1.2px;
 }
 .navbar__links .active {
@@ -77,7 +86,10 @@
     border-radius: 10px;
 }
 .navbar__burger {
-    color: white;
+    color: var(--ejeka_blue);
+    border: 1px var(--ejeka_blue) solid;
+    border-radius: 50%;
+    padding: 2px;
     font-size: 35px;
     cursor: pointer;
     display: none;
@@ -86,14 +98,56 @@
 .navbar__burger:hover {
     transform: scale(1.1);
 }
+.navbar__cancel {
+    color: var(--ejeka_blue);
+    border: 1px var(--ejeka_blue) solid;
+    border-radius: 50%;
+    padding: 2px;
+    font-size: 35px;
+    cursor: pointer;
+    display: none;
+    transition: .2s;
+}
+.navbar__cancel:hover {
+    transform: scale(1.1);
+}
+.hide-scroll::-webkit-scrollbar {
+    display: none;
+    transition: .3s ease-in-out;
+    overflow: hidden;
+}
+.hide-scroll {
+	-ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow: hidden;
+}
+@media(max-width: 1000px) {
+
+.navbar__links {
+        display: none;
+    }
+    .navbar__burger {
+        display: block;
+    }
+    .navbar__cancel {
+        display: block;
+    }
+}
+
 @media(max-width: 768px) {
     .navbar__wrapper {
         padding: 20px 20px;
+    }
+    .navbar__logo {
+        flex: 0.6;
     }
     .navbar__links {
         display: none;
     }
     .navbar__burger {
+        display: block;
+    }
+    .navbar__cancel {
         display: block;
     }
 }
