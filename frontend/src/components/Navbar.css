@@ -4,8 +4,16 @@
 .navbar--sticky {
     position: sticky;
     top: 0;
-    padding: 10px 0;
-    transition: .5s;
+    animation-name: slide-in;
+    animation-duration: .6s;
+}
+@keyframes slide-in {
+    0% {
+        transform: TranslateY(-100%);
+    }
+    100% {
+        trasform: TransLateY(0%);
+    }
 }
 .navbar__wrapper {
     display: flex;
@@ -13,7 +21,7 @@
     justify-content: space-between;
     max-width: 1250px;
     margin: 0 auto;
-    padding: 10px 20px;
+    padding: 12px 20px;
 }
 .navbar__logo {
     flex: 0.4;

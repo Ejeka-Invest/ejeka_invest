@@ -7,7 +7,7 @@ function Navbar() {
   useEffect(() => {
     let navbar = document.querySelector(".navbar");
     window.addEventListener("scroll", () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 200) {
         navbar.classList.add("navbar--sticky");
       } else if (window.scrollY < 90) {
         navbar.classList.remove("navbar--sticky");
