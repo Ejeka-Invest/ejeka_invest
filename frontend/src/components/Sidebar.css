@@ -1,0 +1,60 @@
+.sidebar {
+    background-color: var(--ejeka_blue);
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: fixed;
+    opacity: .5;
+    transform: TranslateX(-100%);
+    transition: .2s ease-in;
+}
+#show-sidebar {
+    transform: TranslateX(0);
+    opacity: 1;
+}
+#hide-sidebar {
+    transform: TranslateX(-100%);
+}
+.sidebar__links {
+    text-align: center;
+    margin-top: 10px;
+}
+.sidebar__links a {
+    display: inline-block;
+    width:90%;
+    color: white;
+    text-decoration: none;
+}
+.sidebar__links .active {
+    background-color: var(--algo_blue_plain);
+    color: white;
+}
+.sidebar__link {
+    font-size: 20px;
+    list-style: none;
+    width: 100%;
+    text-align: center;
+    padding: 20px 60px;
+    transition: .2s ease-in-out
+}
+.sidebar__link:hover {
+    transform: scale(1.01);
+}
+.sidebar__link--login {
+    background-color: white;
+    color: var(--ejeka_blue) !important;
+    border: 1px white solid;
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 5px;
+}
+.sidebar__link--signup {
+    border: 1px white solid;
+    margin: 10px auto;
+    width: 90%;
+    border-radius: 5px;
+    transition: .2s ease-in-out;
+}
+.sidebar__link--signup:hover {
+    background-color: white;
+    color: var(--ejeka_blue);
+}

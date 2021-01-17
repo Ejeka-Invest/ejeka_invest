@@ -1,6 +1,7 @@
 :root {
     --ejeka_blue: #004AAD;
     --light_blue: rgb(211, 234, 241);
+    --algo_blue_plain: #02203c;
 }
 * {
     padding: 0;
