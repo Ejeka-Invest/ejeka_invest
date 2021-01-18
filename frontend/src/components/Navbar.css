@@ -16,6 +16,7 @@
     }
 }
 .navbar__wrapper {
+    overflow-y: hidden;
     height: 80px;
     display: flex;
     align-items: center;
@@ -31,8 +32,8 @@
     text-decoration: none;
     color: var(--ejeka_blue);
 }
-.navbar__logo h1 {
-    display: inline-block;
+.navbar__logo img {
+    height: 200px;
 }
 .navbar__links {
     flex: 0.6;
@@ -52,7 +53,6 @@
     border-radius: 8px;
 }
 .navbar__link {
-    font-weight: bold;
     list-style: none;
     padding: 15px 20px;
     border-radius: 8px;
