@@ -8,7 +8,7 @@ class UserAPI:
         
         #self.username = "mitchelinaju"
         self.password = "adminmaster"
-        self.email = "mitchelballzz@gmail.com"
+        self.email = "mitchelinajuo@gmail.com"
         self.first_name = 'mitchel'
         self.last_name = 'inaju'
 
@@ -67,9 +67,6 @@ class UserAPI:
 
 test= UserAPI()
 
-#print(test.create_user())
-#print(test.login())
-#test.user_details("59f0fa832b274b6099305f6715855d4e8c3f1329")
 
 
 
@@ -130,10 +127,12 @@ class MainAPI:
         response = requests.get(url, data=data,headers=headers)
         return print(response.json())
 
-
+print(test.create_user())
+#print(test.login())
+#test.user_details("59f0fa832b274b6099305f6715855d4e8c3f1329")
 
 test_main=MainAPI()
 #test_main.dashboard("288aef7065da19d44715069a26bf7f7bda32bf1b", action="amount")
 
 #test_main.payment("59f0fa832b274b6099305f6715855d4e8c3f1329")
-test_main.get_investment_details("59f0fa832b274b6099305f6715855d4e8c3f1329")
+test_main.get_investment_details("4bdb1bc1c8d7244d20e20c8ed1c5023113da5630")

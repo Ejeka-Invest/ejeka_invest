@@ -8,3 +8,4 @@
 /env
 .eslintcache
 .env
+accounts/testing.py

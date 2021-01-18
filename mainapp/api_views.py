@@ -149,17 +149,27 @@ def investment_details(request):
         response_data_matured = []
         response_data_all = []
 
-        final_response={
-            "active": response_data_active, 
-            "matured": response_data_matured,
-            "all": (response_data_active,response_data_matured)
-        }
+        if len(response_data_active)!=0:
+            
+            final_response={
+                "active": response_data_active, 
+                "matured": response_data_matured,
+                "all": (response_data_active+response_data_matured)
+            }
+        
+        else:
+            final_response = {
+                "active": "You have no active Investment",
+                "matured": "You have no matured investment",
+                "all": "You haven't made any investment"
+                            }
+
+
 
         user = DepositModel.objects.filter(user=request.user)
         print(request.data['mode'])
         serializer = DepositSerializer(user, many=True)
         data=0
-        {'amount': 1000, 'date_invested': '2021-01-18', 'maturity_date': '2021-07-18'}
         if serializer.data == []:
             data = {'amount': 0, 'date_invested': '0',
                     'maturity_date': '0'}
