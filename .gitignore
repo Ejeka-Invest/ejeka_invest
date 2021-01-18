@@ -1,9 +1,10 @@
 /payment/secrets.py
 **/.vscode/
-/env
+/venv
 /db.sqlite3
 *.pyc
 *__pycache__
 *migrations
 /venv
 .eslintcache
+.env

@@ -51,7 +51,7 @@ class UserPortfolio(AbstractBaseUser):
     last_name = models.CharField(max_length=100)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    unique_id = models.UUIDField(default=uuid.uuid4)
+    uid = models.UUIDField(default=uuid.uuid4)
     date_joined = models.DateTimeField(auto_now=True)
     total_amount_invested = models.IntegerField(default="0")
     roi = models.IntegerField(default="5")
@@ -98,11 +98,15 @@ class DepositModel(models.Model):
     user = models.ForeignKey('UserPortfolio', on_delete=models.CASCADE)
     amount = models.IntegerField(default="0")
     date_in = models.DateTimeField(auto_now_add=True)
-    reference_number = models.CharField(max_length=50, null=True)
+    reference_number = models.CharField(max_length=50, null=False)
+    date_invested = models.DateField(null=False)
+    maturity_date = models.DateField(null=False)
     
 
     def __str__(self):
         return str(self.amount)
+
+    
 
 
 class ReturnsOnInvestments(models.Model):
