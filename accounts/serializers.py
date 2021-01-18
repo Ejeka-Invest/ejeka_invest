@@ -14,4 +14,5 @@ class DepositSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = DepositModel
-        fields = ['amount', 'date_invested', 'maturity_date',]
+        fields = ['amount', 'date_invested',
+                  'maturity_date', 'returns_on_investment', 'final_returns']

@@ -14,7 +14,7 @@ from .paystack import Base
 from django.http import HttpResponse, HttpResponseRedirect
 from urllib.parse import parse_qs
 from accounts.maturity_date import add_months
-
+from scripts.final_returns import get_final_returns
 import urllib.parse as urlparse
 import datetime
 
@@ -98,13 +98,13 @@ def savepayment_view(request):
     payment_details = deposit.confirm_payment(" ".join(reference))
     
     if payment_details['data']['status'] == 'success':
-        #payment_details['data']['amount']
         new_deposit = int(payment_details['data']['amount']/100)
-        #print(new_deposit)
+
+        final_roi=get_final_returns(new_deposit, 15)
+        print(repr(DepositModel.returns_on_investment))
 
         user = payment_details['data']['customer']['email']
         user_detail = UserPortfolio.objects.filter(email=user)      
-        #print(user_detail[0])
 
         deposit = DepositModel.objects.filter(user=user_detail[0])
         deposit_serializer = DepositSerializer(deposit, many=True)
@@ -114,7 +114,8 @@ def savepayment_view(request):
                                                 amount=new_deposit, 
                                                 reference_number=str(reference[0]), 
                                                 date_invested=date_today, 
-                                                         maturity_date=mature_in_6_months)
+                                                maturity_date=mature_in_6_months,
+                                                         final_returns=final_roi)
 
         if deposit.exists():
             deposit_save = DepositModel.objects.filter(user=user_detail[0])
@@ -129,20 +130,8 @@ def savepayment_view(request):
             user_detail.update(current_balance=new_deposit)
 
             
-    return HttpResponseRedirect("/dashboard/")
+    return HttpResponseRedirect("/api/v1/main/dashboard/")
 
-"""
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def InvestmentDetails(request):
-    if request.method == 'GET':
-        user = UserPortfolio.objects.filter(email=request.user)
-        serializer = DepositSerializer(user, many=True)
-        print(serializer.data)
-
-        return Response('serializer.data')
-
-"""
 
 
 @permission_classes([IsAuthenticated])
@@ -152,3 +141,19 @@ class InvestmentDetails(generics.ListCreateAPIView):
     permission_Calsses = [IsAuthenticated]
 
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def investment_details(request):
+    if request.method == 'GET':
+        user = DepositModel.objects.filter(user=request.user)
+        #print(user)
+        serializer = DepositSerializer(user, many=True)
+        data=0
+        {'amount': 1000, 'date_invested': '2021-01-18', 'maturity_date': '2021-07-18'}
+        if serializer.data == []:
+            data = {'amount': 0, 'date_invested': '0',
+                    'maturity_date': '0'}
+        else:
+            data=serializer.data[:]
+            
+        return Response(data)

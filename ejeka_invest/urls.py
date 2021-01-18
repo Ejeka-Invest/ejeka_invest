@@ -19,14 +19,18 @@ from django.urls import path, include
 from django.views.generic import TemplateView
 
 urlpatterns = [
+    # react paths
+    path("", TemplateView.as_view(template_name="index.html")),
+    path("about/", TemplateView.as_view(template_name="index.html")),
+    path("getintouch/", TemplateView.as_view(template_name="index.html")),
+    path("login/", TemplateView.as_view(template_name="index.html")),
+    path("signup/", TemplateView.as_view(template_name="index.html")),
+
+    #django paths
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-    #path('api/accounts/', include('accounts.urls')),
-    path('main/', include('mainapp.urls')),
-    path('', include('mainapp.urls')),
-    path('', include('accounts.urls')),
-    # react paths
-     path("", TemplateView.as_view(template_name="index.html")),
-    
+    path('api/v1/main/', include('mainapp.urls')),
+    path('api/v1/account/', include('accounts.urls')),
+     
 ]
