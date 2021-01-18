@@ -4,7 +4,7 @@ class UserAPI:
 
     def __init__(self): 
         self.url = "http://127.0.0.1:8000/auth/"
-        self.account_url = "http://127.0.0.1:8000/api/accounts/"
+        self.account_url = "http://127.0.0.1:8000/api/v1/account/"
         
         #self.username = "mitchelinaju"
         self.password = "adminmaster"
@@ -66,15 +66,16 @@ class UserAPI:
         return print(response.json(), response.status_code)
 
 test= UserAPI()
-print(test.create_user())
+
+#print(test.create_user())
 #print(test.login())
-#test.user_details("20f8fd50490a6a8771720b42fd829cac6c47a6e0")
+#test.user_details("59f0fa832b274b6099305f6715855d4e8c3f1329")
 
 
 
 class MainAPI:
     def __init__(self):
-        self.main = "http://127.0.0.1:8000/"
+        self.main = "http://127.0.0.1:8000/api/v1/main/"
 
     
     def get_roi(self, token):
@@ -88,7 +89,7 @@ class MainAPI:
         return print(response.json(), response.status_code)
 
     def dashboard(self, token, action):
-        url = self.main+"api/dashboard/"
+        url = self.main+"dashboard/"
 
         headers = headers = {
             "Authorization": "Token "+str(token)
@@ -100,15 +101,15 @@ class MainAPI:
         return print(response.json())
 
     def payment(self, token):
-        url = self.main+"main/api/payment/"
+        url = self.main+"payment/"
 
         headers = headers = {
             "Authorization": "Token "+str(token)
         }
 
         data={
-            "amount":1000,  
-            "callback_url": "main/savepayment/"
+            "amount":245000,  
+            "callback_url": "savepayment/"
         }
 
         response = requests.post(url, data=data, headers=headers)
@@ -129,6 +130,5 @@ class MainAPI:
 
 test_main=MainAPI()
 #test_main.dashboard("288aef7065da19d44715069a26bf7f7bda32bf1b", action="amount")
-#test_main.payment("20f8fd50490a6a8771720b42fd829cac6c47a6e0")
-"""work on when it returns an empty list"""
-test_main.get_investment_details("20f8fd50490a6a8771720b42fd829cac6c47a6e0")
+test_main.payment("59f0fa832b274b6099305f6715855d4e8c3f1329")
+#test_main.get_investment_details("59f0fa832b274b6099305f6715855d4e8c3f1329")

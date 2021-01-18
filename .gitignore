@@ -5,6 +5,6 @@
 *.pyc
 *__pycache__
 *migrations
-/venv
+/env
 .eslintcache
 .env
