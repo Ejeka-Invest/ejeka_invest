@@ -101,6 +101,9 @@ class DepositModel(models.Model):
     reference_number = models.CharField(max_length=50, null=False)
     date_invested = models.DateField(null=False)
     maturity_date = models.DateField(null=False)
+    returns_on_investment = models.IntegerField(default="10")
+    final_returns = models.IntegerField(null=True, default="0" )
+    
     
 
     def __str__(self):
