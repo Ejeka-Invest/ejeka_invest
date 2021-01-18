@@ -122,13 +122,18 @@ class MainAPI:
             "Authorization": "Token "+str(token)
         }
 
+        data={
+            "mode":"active"
+        }
 
-        response = requests.get(url, headers=headers)
+
+        response = requests.get(url, data=data,headers=headers)
         return print(response.json())
 
 
 
 test_main=MainAPI()
 #test_main.dashboard("288aef7065da19d44715069a26bf7f7bda32bf1b", action="amount")
-test_main.payment("59f0fa832b274b6099305f6715855d4e8c3f1329")
-#test_main.get_investment_details("59f0fa832b274b6099305f6715855d4e8c3f1329")
+
+#test_main.payment("59f0fa832b274b6099305f6715855d4e8c3f1329")
+test_main.get_investment_details("59f0fa832b274b6099305f6715855d4e8c3f1329")

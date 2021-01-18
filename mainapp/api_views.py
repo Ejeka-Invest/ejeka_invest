@@ -145,8 +145,18 @@ class InvestmentDetails(generics.ListCreateAPIView):
 @permission_classes([IsAuthenticated])
 def investment_details(request):
     if request.method == 'GET':
+        response_data_active = []
+        response_data_matured = []
+        response_data_all = []
+
+        final_response={
+            "active": response_data_active, 
+            "matured": response_data_matured,
+            "all": (response_data_active,response_data_matured)
+        }
+
         user = DepositModel.objects.filter(user=request.user)
-        #print(user)
+        print(request.data['mode'])
         serializer = DepositSerializer(user, many=True)
         data=0
         {'amount': 1000, 'date_invested': '2021-01-18', 'maturity_date': '2021-07-18'}
@@ -156,4 +166,13 @@ def investment_details(request):
         else:
             data=serializer.data[:]
             
-        return Response(data)
+            for details in data:
+                maturity_date = datetime.datetime.strptime(
+                    details['maturity_date'], '%Y-%m-%d').date()
+                if datetime.date.today() != maturity_date:
+                    
+                    response_data_active.append(details) 
+                if datetime.date.today() >= maturity_date:
+                    response_data_matured.append(details)
+            
+        return Response(final_response)
