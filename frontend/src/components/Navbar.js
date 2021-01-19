@@ -7,6 +7,7 @@ import { CgClose } from "react-icons/cg";
 import { showSidebar, hideSidebar } from "../store/actions/sidebar";
 import { useDispatch, useSelector } from "react-redux";
 import Sidebar from "./Sidebar";
+import logo from "../svgs/logo.svg";
 
 function Navbar() {
   let dispatch = useDispatch();
@@ -35,7 +36,7 @@ function Navbar() {
         <div className="navbar__wrapper">
           <div className="navbar__logo">
             <Link to="/" exact>
-              <h1>Ejeka Invest</h1>
+              <img src={logo} alt=""/>
             </Link>
           </div>
           <ul className="navbar__links">
