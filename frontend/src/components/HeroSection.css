@@ -9,17 +9,17 @@
     max-width: 400px;
 }
 .heroSection__header {
-    font-size: var(--hero_header_font);
+    font-size: var(--header_font);
 }
 .heroSection__body {
-    font-size: var(--hero_body_font);
+    font-size: var(--body_font);
     padding: 20px 0;
 }
 .heroSection__btn {
     background-color: var(--ejeka_blue);
     color: white;
     padding: 17px 50px;
-    font-size: var(--hero_body_font);
+    font-size: var(--body_font);
     border: none;
     outline: none;
     border-radius: 8px;
@@ -36,7 +36,7 @@
         width: 300px;
     }
     .heroSection__header {
-        font-size: var(--hero_header_font-md);
+        font-size: var(--header_font-md);
     }
     .heroSection__image {
         width: 600px;

@@ -2,6 +2,8 @@ import React, {useEffect} from "react";
 import "./Home.css";
 import Navbar from "../components/Navbar";
 import HeroSection from "../components/HeroSection";
+import Info from "../components/Info";
+import { deposit, guarantee, invest } from "../data/hero";
 
 function Home() {
     useEffect(() => {
@@ -10,10 +12,11 @@ function Home() {
     return(
         <div className="home">
             <Navbar />
-            <HeroSection />
-            <HeroSection />
-            <HeroSection />
-            <HeroSection />
+            <HeroSection {...invest} />
+            <Info />
+            <h1 className="home__header">We Provide...</h1>
+            <HeroSection {...deposit} />
+            <HeroSection {...guarantee} />
         </div>
     )
 }

@@ -3,10 +3,10 @@
     --light_blue: rgb(211, 234, 241);
     --algo_blue_plain: #02203c;
     --algo_blue: linear-gradient(-90deg,#02203c,#001528);
-    --hero_header_font: 50px;
-    --hero_header_font-md: 40px;
-    --hero_header_font-sm: 30px;
-    --hero_body_font: 20px;
+    --header_font: 50px;
+    --header_font-md: 40px;
+    --header_font-sm: 30px;
+    --body_font: 20px;
 }
 * {
     padding: 0;
