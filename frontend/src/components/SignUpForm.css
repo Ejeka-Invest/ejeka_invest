@@ -1,0 +1,15 @@
+.signUpForm {
+    max-width: 600px;
+    margin: 60px auto;
+    border: 1px red solid;
+    padding: 40px 20px;
+}
+
+.signUpForm__formField {
+    display: flex;
+    flex-direction: column;
+}
+.signUpForm__formField input {
+    height: 60px;
+    font-size: 25px;
+}
