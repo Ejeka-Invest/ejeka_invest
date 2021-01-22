@@ -18,11 +18,16 @@
 .heroSection__btn {
     background-color: var(--ejeka_blue);
     color: white;
+    text-decoration: none;
     padding: 17px 50px;
     font-size: var(--body_font);
     border: none;
     outline: none;
     border-radius: 8px;
+    transition: .2s ease-in-out;
+}
+.heroSection__btn:hover {
+    background-color: var(--algo_blue_plain);
 }
 .heroSection__image {
     width: 700px;
