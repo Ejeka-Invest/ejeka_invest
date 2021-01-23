@@ -1,0 +1,8 @@
+.login {
+    background: url("../svgs/invest.svg"), linear-gradient(rgba(55, 66, 95, 0.7), rgb(136, 155, 207, 0.7));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    min-height: 100vh;
+    padding-top: 80px;
+}

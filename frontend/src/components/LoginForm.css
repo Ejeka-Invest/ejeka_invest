@@ -1,4 +1,4 @@
-.signUpForm {
+.loginForm {
     border: 1px var(--algo_blue_plain) solid;
     background-color:  var(--algo_blue_plain);
     max-width: 500px;
@@ -7,21 +7,21 @@
     padding: 50px 30px;
     box-shadow: 0 0 10px 0 black;
 }
-.signUpForm__header {
+.loginForm__header {
     color: white;
     text-align: center;
 }
-.signUpForm__body {
+.loginForm__body {
     color: white;
     text-align: center;
     font-size: 18px;
 }
-.signUpForm__formField {
+.loginForm__formField {
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    margin-top: 40px;
 }
-.signUpForm__formField input {
+.loginForm__formField input {
     height:60px;
     padding: 0 10px;
     font-size: 20px;
@@ -30,12 +30,12 @@
     border: none;
     background-color: rgb(241, 248, 255);
 }
-.signUpForm__formField label {
+.loginForm__formField label {
     font-size: 15px;
     color: white;
     margin-bottom: 3px;
 }
-.signUpForm__btn {
+.loginForm__btn {
     cursor: pointer;
     background-color: var(--ejeka_blue);
     color: white;
@@ -49,18 +49,21 @@
     margin-top: 20px;
     transition: .2s ease-in-out;
 }
-.signUpForm__btn:hover {
+.loginForm__btn:hover {
     background-color: dodgerblue;
 }
-.signUpForm__already {
+.loginForm__already, .loginForm__forgot {
     text-align: center;
     margin-top: 10px;
 }
-.signUpForm__already a {
+.loginForm__already a, .loginForm__forgot a {
     color: white;
     text-align: center;
     text-decoration: none;
 }
-.signUpForm__already a:hover {
+.loginForm__forgot a:hover {
+    color: var(--ejeka_blue);
+}
+.loginForm__already a:hover {
     color: var(--ejeka_blue);
 }
