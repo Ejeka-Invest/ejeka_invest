@@ -10,11 +10,17 @@ function SignUpForm() {
     password: "",
   })
   const handleChange = (e) => {
-
+    setUserData({
+      ...userData,
+      [e.target.name]: e.target.value
+    })
+  }
+  const handleSubmit = (e) => {
+    e.preventDefault();
   }
   return (
     <div className="signUpForm">
-      <form className="signUpForm__form">
+      <form onSubmit={ (e) => handleSubmit(e) } className="signUpForm__form">
         <div className="signUpForm__formField">
           <label htmlFor="sign-firstName">First Name</label>
           <input name="firstName" onChange={ (e) => handleChange(e) } required id="sign-firstName" type="text" />
