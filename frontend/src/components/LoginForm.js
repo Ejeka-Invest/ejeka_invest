@@ -1,17 +1,24 @@
-import React from 'react';
+import React, { useState } from "react";
 import "./LoginForm.css";
 import { Link } from "react-router-dom";
 
 function LoginForm() {
-    const handleChange = (e) => {
-
-    }
-    const handleSubmit = (e) => {
-        
-    }
-    return (
-        <div className="loginForm">
-            <form onSubmit={(e) => handleSubmit(e)} className="loginForm__form">
+  const [userData, setUserData] = useState({
+    email: "",
+    password: "",
+  });
+  const handleChange = (e) => {
+    setUserData({
+      ...userData,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+  return (
+    <div className="loginForm">
+      <form onSubmit={(e) => handleSubmit(e)} className="loginForm__form">
         <h1 className="loginForm__header">Login to your account</h1>
         <p className="loginForm__body">Pick up where you left off</p>
         <div className="loginForm__formField">
@@ -48,8 +55,8 @@ function LoginForm() {
           </Link>
         </div>
       </form>
-        </div>
-    )
+    </div>
+  );
 }
 
 export default LoginForm;

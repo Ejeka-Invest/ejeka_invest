@@ -1,0 +1,18 @@
+.textBox {
+    width: 300px;
+    padding: 20px;
+}
+.textBox p {
+    padding: 10px 0;
+}
+.textBox a {
+    text-decoration: none;
+    color: white;
+}
+.textBox a:hover {
+    color: lightgray;
+}
+.textBox__header {
+    font-weight: bold;
+    text-transform: uppercase;
+}
