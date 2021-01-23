@@ -1,6 +1,5 @@
 import React from "react";
 import "./HeroSection.css";
-import invest from "../svgs/invest.svg";
 
 function HeroSection({
   header,
