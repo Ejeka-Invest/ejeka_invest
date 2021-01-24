@@ -42,7 +42,7 @@ function LoginForm() {
           />
         </div>
         <button type="submit" className="loginForm__btn">
-          Create Account
+          Login
         </button>
         <div className="loginForm__forgot">
           <Link to="/login/" exact>

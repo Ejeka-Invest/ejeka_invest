@@ -20,6 +20,9 @@
     color: white;
     text-decoration: none;
 }
+.footer__icons a:hover {
+    color: lightgray;   
+}
 .footer__icon {
     font-size: 60px;
 }
