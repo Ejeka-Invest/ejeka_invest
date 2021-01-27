@@ -1,0 +1,10 @@
+.home__header {
+    text-align: center;
+    font-size: var(--header_font);
+    padding: 30px 0;
+}
+@media(max-width: 768px) {
+    .home__header {
+        font-size: var(--header_font-md);
+    }
+}

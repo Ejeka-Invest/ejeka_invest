@@ -1,0 +1,24 @@
+.info {
+    background: var(--algo_blue);
+    color: white;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+.info__wrapper {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+}
+.info__header {
+    font-size: var(--header_font);
+}
+.info__body {
+    font-size: var(--body_font);
+    padding: 10px 0 ;
+}
+@media(max-width: 768px) {
+    .info__header {
+        font-size: var(--header_font-md);
+    }
+}

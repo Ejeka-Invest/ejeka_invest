@@ -16,6 +16,7 @@
     }
 }
 .navbar__wrapper {
+    overflow-y: hidden;
     height: 80px;
     display: flex;
     align-items: center;
@@ -31,8 +32,8 @@
     text-decoration: none;
     color: var(--ejeka_blue);
 }
-.navbar__logo h1 {
-    display: inline-block;
+.navbar__logo img {
+    height: 200px;
 }
 .navbar__links {
     flex: 0.6;
@@ -48,21 +49,25 @@
     letter-spacing: 1.2px;
 }
 .navbar__links .active {
-    background-color: var(--light_blue);
-    border-radius: 8px;
+    border-bottom: 4px var(--ejeka_blue) solid;
 }
 .navbar__link {
-    font-weight: bold;
     list-style: none;
     padding: 15px 20px;
-    border-radius: 8px;
+    border-radius: 5px;
+    height: 75px;
+    display: flex;
+    align-items: center;
     transition: .3s ease-in-out;
+}
+.navbar__link:hover {
+    transform: scale(1.01);
 }
 .navbar__link--login {
     font-weight: bold;
     list-style: none;
     padding: 13px 30px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px var(--ejeka_blue) solid;
     transition: .3s ease-in-out;
 }
@@ -70,20 +75,18 @@
     font-weight: bold;
     list-style: none;
     padding: 13px 30px;
-    border-radius: 8px;
+    border-radius: 5px;
     border: 1px var(--ejeka_blue) solid;
     color: white;
     background-color: var(--ejeka_blue);
     transition: .3s ease-in-out;
 }
-.navbar__link:hover {
-    background-color: var(--light_blue);
-}
+
 .navbar__link--reduced {
     list-style: none;
     padding: 15px 40px;
     border: 1px var(--ejeka_blue) solid;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 .navbar__burger {
     color: var(--ejeka_blue);

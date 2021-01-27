@@ -1,0 +1,28 @@
+.footer {
+    min-height: 50vh;
+    color: white;
+    background: var(--algo_blue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-flow: wrap;
+}
+.footer__text {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+}
+.footer__icons {
+    padding: 25px;
+    min-width: 200px;
+}
+.footer__icons a {
+    color: white;
+    text-decoration: none;
+}
+.footer__icons a:hover {
+    color: lightgray;   
+}
+.footer__icon {
+    font-size: 60px;
+}
