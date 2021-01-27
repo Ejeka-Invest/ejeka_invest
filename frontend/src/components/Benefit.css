@@ -1,0 +1,32 @@
+.benefit {
+    min-height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.benefit__wrapper {
+    text-align: center;
+}
+.benefit__header {
+    font-size: var(--header_font);
+    padding: 30px;
+}
+.benefit__btn {
+    background-color: var(--ejeka_blue);
+    color: white;
+    text-decoration: none;
+    padding: 17px 50px;
+    font-size: var(--body_font);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition: .2s ease-in-out;
+}
+.benefit__btn:hover {
+    background-color: var(--algo_blue_plain);
+}
+@media(max-width: 768px) {
+    .benefit__header {
+        font-size: var(--header_font-md);
+    }
+}
