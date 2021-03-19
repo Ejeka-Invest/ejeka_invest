@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.e0bcd367.chunk.css",
-    "main.js": "/static/js/main.86dfd752.chunk.js",
-    "main.js.map": "/static/js/main.86dfd752.chunk.js.map",
+    "main.css": "/static/css/main.d69c9178.chunk.css",
+    "main.js": "/static/js/main.dfa94b8a.chunk.js",
+    "main.js.map": "/static/js/main.dfa94b8a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.c60b7f5c.js",
     "runtime-main.js.map": "/static/js/runtime-main.c60b7f5c.js.map",
     "static/js/2.25917fa2.chunk.js": "/static/js/2.25917fa2.chunk.js",
     "static/js/2.25917fa2.chunk.js.map": "/static/js/2.25917fa2.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.e0bcd367.chunk.css.map": "/static/css/main.e0bcd367.chunk.css.map",
+    "static/css/main.d69c9178.chunk.css.map": "/static/css/main.d69c9178.chunk.css.map",
     "static/js/2.25917fa2.chunk.js.LICENSE.txt": "/static/js/2.25917fa2.chunk.js.LICENSE.txt",
     "static/media/guarantee.3ca13f9c.svg": "/static/media/guarantee.3ca13f9c.svg",
     "static/media/Signup.css": "/static/media/invest.5e99574e.svg",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.c60b7f5c.js",
     "static/js/2.25917fa2.chunk.js",
-    "static/css/main.e0bcd367.chunk.css",
-    "static/js/main.86dfd752.chunk.js"
+    "static/css/main.d69c9178.chunk.css",
+    "static/js/main.dfa94b8a.chunk.js"
   ]
 }

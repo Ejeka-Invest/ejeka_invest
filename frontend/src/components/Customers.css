@@ -1,0 +1,7 @@
+.customers {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(118, 156, 168);
+}

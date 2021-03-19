@@ -6,6 +6,7 @@ import About from "./pages/About";
 import GetInTouch from "./pages/GetInTouch";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import Dashboard from "./pages/Dashboard";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/signup/" exact>
             <Signup />
+          </Route>
+          <Route path="/dashboard/" exact>
+            <Dashboard />
           </Route>
         </Switch>
       </div>
