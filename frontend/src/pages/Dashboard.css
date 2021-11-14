@@ -1,0 +1,43 @@
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  background-color: whitesmoke;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.main__dashboard > * {
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 20px;
+}
+
+.hide {
+  visibility: hidden;
+  display: none;
+}
+.active {
+  margin-top: 30px;
+}
+
+.main__dashboard .portfolio__details {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  width: 65vw;
+  /* height: 40vh; */
+  /* background-color: white; */
+}
+
+.single__detail > h3 {
+  margin-left: 100px;
+  cursor: pointer;
+  color: grey;
+  font-weight: 300;
+}
+
+.single__detail .target__click__active {
+  width: 70px;
+
+  border-bottom: 5px solid var(--ejeka_blue);
+}

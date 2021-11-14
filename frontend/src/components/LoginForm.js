@@ -3,6 +3,7 @@ import "./LoginForm.css";
 import { Link } from "react-router-dom";
 
 function LoginForm() {
+  const url = window.location.host;
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -14,6 +15,27 @@ function LoginForm() {
     });
   };
   const handleSubmit = (e) => {
+    const data = {
+      email: userData.email,
+      password: userData.password,
+    };
+
+    fetch("http://127.0.0.1:8000" + "/auth/token/login", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data["auth_token"]);
+        window.open("/dashboard/", "_self");
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+
     e.preventDefault();
   };
   return (
@@ -43,6 +65,9 @@ function LoginForm() {
         </div>
         <button type="submit" className="loginForm__btn">
           Login
+        </button>
+        <button type="submit" className="loginForm__btn default__user">
+          Login as Default user
         </button>
         <div className="loginForm__forgot">
           <Link to="/login/" exact>

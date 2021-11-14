@@ -1,0 +1,29 @@
+.portfolio__item__detail {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-evenly;
+
+  width: 65vw;
+  height: 70px;
+  background-color: #fff;
+  /* border-radius: 10px; */
+  margin: 20px 0 0 20px;
+}
+.single_portfolio_item {
+  margin-right: 85px;
+  margin-top: 10px;
+}
+.purple {
+  border-left: 8px solid purple;
+}
+.red {
+  border-left: 8px solid red;
+}
+.green {
+  border-left: 8px solid green;
+}
+
+.blue {
+  border-left: 8px solid blue;
+}

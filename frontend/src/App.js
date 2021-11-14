@@ -10,6 +10,8 @@ import Dashboard from "./pages/Dashboard";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import Explore from "./pages/Explore";
+import Profile from "./pages/Profile";
 
 function App() {
   return (
@@ -34,6 +36,12 @@ function App() {
           </Route>
           <Route path="/dashboard/" exact>
             <Dashboard />
+          </Route>
+          <Route path="/explore/" exact>
+            <Explore />
+          </Route>
+          <Route path="/profile/" exact>
+            <Profile />
           </Route>
         </Switch>
       </div>

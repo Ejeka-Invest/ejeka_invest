@@ -1,69 +1,74 @@
 .loginForm {
-    border: 1px var(--algo_blue_plain) solid;
-    background-color:  var(--algo_blue_plain);
-    max-width: 500px;
-    margin: 0 auto;
-    border-radius: 9px;
-    padding: 50px 30px;
-    box-shadow: 0 0 10px 0 black;
+  border: 1px var(--algo_blue_plain) solid;
+  background-color: var(--algo_blue_plain);
+  max-width: 500px;
+  margin: 0 auto;
+  border-radius: 9px;
+  padding: 50px 30px;
+  box-shadow: 0 0 10px 0 black;
 }
 .loginForm__header {
-    color: white;
-    text-align: center;
+  color: white;
+  text-align: center;
 }
 .loginForm__body {
-    color: white;
-    text-align: center;
-    font-size: 18px;
+  color: white;
+  text-align: center;
+  font-size: 18px;
 }
 .loginForm__formField {
-    display: flex;
-    flex-direction: column;
-    margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
 }
 .loginForm__formField input {
-    height:60px;
-    padding: 0 10px;
-    font-size: 20px;
-    border-radius: 4px;
-    outline: none;
-    border: none;
-    background-color: rgb(241, 248, 255);
+  height: 60px;
+  padding: 0 10px;
+  font-size: 20px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  background-color: rgb(241, 248, 255);
 }
 .loginForm__formField label {
-    font-size: 15px;
-    color: white;
-    margin-bottom: 3px;
+  font-size: 15px;
+  color: white;
+  margin-bottom: 3px;
 }
 .loginForm__btn {
-    cursor: pointer;
-    background-color: var(--ejeka_blue);
-    color: white;
-    text-decoration: none;
-    padding: 17px 50px;
-    border: none;
-    outline: none;
-    font-size: 17px;
-    border-radius: 8px;
-    width: 100%;
-    margin-top: 20px;
-    transition: .2s ease-in-out;
+  cursor: pointer;
+  background-color: var(--ejeka_blue);
+  color: white;
+  text-decoration: none;
+  padding: 17px 50px;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  transition: 0.2s ease-in-out;
+}
+.default__user {
+  background-color: rgb(223, 46, 46);
 }
 .loginForm__btn:hover {
-    background-color: dodgerblue;
+  background-color: dodgerblue;
 }
-.loginForm__already, .loginForm__forgot {
-    text-align: center;
-    margin-top: 10px;
+.loginForm__already,
+.loginForm__forgot {
+  text-align: center;
+  margin-top: 10px;
 }
-.loginForm__already a, .loginForm__forgot a {
-    color: white;
-    text-align: center;
-    text-decoration: none;
+.loginForm__already a,
+.loginForm__forgot a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
 }
 .loginForm__forgot a:hover {
-    color: var(--ejeka_blue);
+  color: var(--ejeka_blue);
 }
 .loginForm__already a:hover {
-    color: var(--ejeka_blue);
+  color: var(--ejeka_blue);
 }

@@ -1,0 +1,10 @@
+.explore {
+  display: flex;
+  background-color: whitesmoke;
+}
+
+.main__explore > * {
+  margin-left: 90px;
+  margin-right: 90px;
+  margin-top: 20px;
+}

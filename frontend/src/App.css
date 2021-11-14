@@ -1,16 +1,16 @@
 :root {
-    --ejeka_blue: #004AAD;
-    --light_blue: rgb(211, 234, 241);
-    --algo_blue_plain: #02203c;
-    --algo_blue: linear-gradient(-90deg,#02203c,#001528);
-    --header_font: 50px;
-    --header_font-md: 40px;
-    --header_font-sm: 30px;
-    --body_font: 20px;
+  --ejeka_blue: #004aad;
+  --light_blue: rgb(211, 234, 241);
+  --algo_blue_plain: #02203c;
+  --algo_blue: linear-gradient(-90deg, #02203c, #001528);
+  --header_font: 50px;
+  --header_font-md: 40px;
+  --header_font-sm: 30px;
+  --body_font: 20px;
 }
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'PT Sans', sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans", sans-serif;
 }

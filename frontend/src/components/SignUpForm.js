@@ -3,6 +3,8 @@ import "./SignUpForm.css";
 import { Link } from "react-router-dom";
 
 function SignUpForm() {
+  const url = window.location.host;
+
   const [userData, setUserData] = useState({
     firstName: "",
     lastName: "",
@@ -17,6 +19,30 @@ function SignUpForm() {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    const data = {
+      first_name: userData.firstName,
+      last_name: userData.lastName,
+      email: userData.email,
+      password: userData.password,
+    };
+
+    fetch("http://127.0.0.1:8000" + "/auth/users", {
+      method: "POST", // or 'PUT'
+      headers: {
+        "Content-Type": "application/json",
+        csrfmiddlewaretoken: "{{ csrf_token }}",
+      },
+      body: JSON.parse(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Success:", data);
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+        console.log(data);
+      });
   };
   return (
     <div className="signUpForm">

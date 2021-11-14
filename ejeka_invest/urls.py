@@ -17,20 +17,23 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from django.views.decorators.csrf import csrf_exempt
+
 
 urlpatterns = [
     # react paths
-    path("", TemplateView.as_view(template_name="index.html")),
+    path("", csrf_exempt(TemplateView.as_view(template_name="index.html"))),
     path("about/", TemplateView.as_view(template_name="index.html")),
     path("getintouch/", TemplateView.as_view(template_name="index.html")),
-    path("login/", TemplateView.as_view(template_name="index.html")),
-    path("signup/", TemplateView.as_view(template_name="index.html")),
+    path("login/", csrf_exempt(TemplateView.as_view(template_name="index.html"))),
+    path("signup/", csrf_exempt(TemplateView.as_view(template_name="index.html"))),
+    path("dashboard/", csrf_exempt(TemplateView.as_view(template_name="index.html"))),
 
-    #django paths
+    # django paths
     path('admin/', admin.site.urls),
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
     path('api/v1/main/', include('mainapp.urls')),
     path('api/v1/account/', include('accounts.urls')),
-     
+
 ]
